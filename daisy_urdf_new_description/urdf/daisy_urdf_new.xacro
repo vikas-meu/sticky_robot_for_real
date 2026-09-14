@@ -1,0 +1,314 @@
+<?xml version="1.0" ?>
+<robot name="daisy_urdf_new" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find daisy_urdf_new_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find daisy_urdf_new_description)/urdf/daisy_urdf_new.ros2control" />
+<xacro:include filename="$(find daisy_urdf_new_description)/urdf/daisy_urdf_new.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0712649855773507 -0.15079345730111376 0.04910761692816323" rpy="0 0 0"/>
+    <mass value="92.72588975961706"/>
+    <inertia ixx="1.19065" iyy="0.841338" izz="1.074932" ixy="-0.009959" iyz="-0.20334" ixz="-0.011912"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel_1">
+  <inertial>
+    <origin xyz="0.019999933309998913 2.475073197505395e-07 -3.0093397575953196e-07" rpy="0 0 0"/>
+    <mass value="9.864600932271951"/>
+    <inertia ixx="0.049323" iyy="0.025977" izz="0.025977" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.234857 0.228904 0.043263" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.234857 0.228904 0.043263" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel_1">
+  <inertial>
+    <origin xyz="-0.020000066690001067 2.475073173913156e-07 -3.009339784448839e-07" rpy="0 0 0"/>
+    <mass value="9.86460093227195"/>
+    <inertia ixx="0.049323" iyy="0.025977" izz="0.025977" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.098792 0.228904 0.043263" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.098792 0.228904 0.043263" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="3.0313904109124934e-08 -0.06554019981850395 0.019335000000000074" rpy="0 0 0"/>
+    <mass value="1.5985167796332775"/>
+    <inertia ixx="0.000869" iyy="0.000869" izz="0.00134" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.07264 0.163749 -0.15" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.07264 0.163749 -0.15" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_holder_1">
+  <inertial>
+    <origin xyz="0.006735470719732947 0.001457372946778293 -1.521566193041224e-07" rpy="0 0 0"/>
+    <mass value="0.28267671486629115"/>
+    <inertia ixx="0.000125" iyy="5.3e-05" izz="8.8e-05" ixy="1.6e-05" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.106605 0.096491 -0.784913" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/shoulder_holder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.106605 0.096491 -0.784913" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/shoulder_holder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_1">
+  <inertial>
+    <origin xyz="0.04768022768194596 0.08487881721136446 0.2596123177716294" rpy="0 0 0"/>
+    <mass value="1.6541745304478335"/>
+    <inertia ixx="0.04356" iyy="0.002173" izz="0.045586" ixy="0.009457" iyz="-0.000608" ixz="0.000132"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.062409 0.091893 -0.526479" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.062409 0.091893 -0.526479" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wrist_up_down_1">
+  <inertial>
+    <origin xyz="-0.004232817181143517 -0.013351635019161257 -0.00012907659505356772" rpy="0 0 0"/>
+    <mass value="0.08492179070156351"/>
+    <inertia ixx="1.3e-05" iyy="1.1e-05" izz="1.7e-05" ixy="-5e-06" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.184981 0.268617 -0.781954" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/wrist_up_down_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.184981 0.268617 -0.781954" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/wrist_up_down_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wrist_rotate_1">
+  <inertial>
+    <origin xyz="0.005257141731330267 -0.011043852350751837 1.746822745418708e-05" rpy="0 0 0"/>
+    <mass value="0.1372813411027509"/>
+    <inertia ixx="1.9e-05" iyy="2.5e-05" izz="2.7e-05" ixy="5e-06" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.179121 0.296018 -0.781995" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/wrist_rotate_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.179121 0.296018 -0.781995" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/wrist_rotate_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gripper_1">
+  <inertial>
+    <origin xyz="0.003483170119140927 -0.015509004683038952 0.004787822113007767" rpy="0 0 0"/>
+    <mass value="0.016467704072736098"/>
+    <inertia ixx="2e-06" iyy="0.0" izz="2e-06" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.169998 0.306019 -0.799091" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/gripper_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.169998 0.306019 -0.799091" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/gripper_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="chest_rod_1">
+  <inertial>
+    <origin xyz="3.031390412300272e-08 2.4288168073982597e-07 0.44" rpy="0 0 0"/>
+    <mass value="8.835828929696392"/>
+    <inertia ixx="0.571309" iyy="0.571013" izz="0.001912" ixy="6.7e-05" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.07264 0.100455 -0.201166" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/chest_rod_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.07264 0.100455 -0.201166" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/chest_rod_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="chest_slider_1">
+  <inertial>
+    <origin xyz="-0.06721943506194489 0.23797408706079784 -0.061642604380709454" rpy="0 0 0"/>
+    <mass value="0.7986184654805082"/>
+    <inertia ixx="0.0007" iyy="0.000684" izz="0.000589" ixy="4e-06" iyz="-3e-06" ixz="-1.3e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.144281 0.340856 -0.842332" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/chest_slider_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.144281 0.340856 -0.842332" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find daisy_urdf_new_description)/meshes/chest_slider_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="left_wheel_link" type="continuous">
+  <origin xyz="0.234857 -0.228904 -0.043263" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_wheel_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="right_wheel_link" type="continuous">
+  <origin xyz="-0.098792 -0.228904 -0.043263" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_wheel_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="lidar_link" type="fixed">
+  <origin xyz="0.07264 -0.163749 0.15" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="shoulder_rotation_link" type="revolute">
+  <origin xyz="-0.037676 0.244365 -0.057419" rpy="0 0 0"/>
+  <parent link="chest_slider_1"/>
+  <child link="shoulder_holder_1"/>
+  <axis xyz="0.977391 0.211441 -0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="arm_slider_link" type="prismatic">
+  <origin xyz="-0.044196 0.004598 -0.258434" rpy="0 0 0"/>
+  <parent link="shoulder_holder_1"/>
+  <child link="arm_1"/>
+  <axis xyz="0.211421 -0.9773 -0.013638"/>
+  <limit upper="0.178985" lower="-0.172709" effort="100" velocity="100"/>
+</joint>
+
+<joint name="writst_u_d_link" type="revolute">
+  <origin xyz="0.122572 -0.176724 0.255475" rpy="0 0 0"/>
+  <parent link="arm_1"/>
+  <child link="wrist_up_down_1"/>
+  <axis xyz="0.977391 0.211441 -0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="wrist_rotation_link" type="revolute">
+  <origin xyz="-0.00586 -0.027401 4.1e-05" rpy="0 0 0"/>
+  <parent link="wrist_up_down_1"/>
+  <child link="wrist_rotate_1"/>
+  <axis xyz="0.211421 -0.9773 -0.013638"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="gripper_link" type="revolute">
+  <origin xyz="-0.009123 -0.010001 0.017096" rpy="0 0 0"/>
+  <parent link="wrist_rotate_1"/>
+  <child link="gripper_1"/>
+  <axis xyz="0.002884 -0.01333 0.999907"/>
+  <limit upper="0.523599" lower="-1.434661" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Revolute 11" type="revolute">
+  <origin xyz="0.07264 -0.100455 0.201166" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="chest_rod_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Slider 12" type="prismatic">
+  <origin xyz="0.071641 -0.240401 0.641166" rpy="0 0 0"/>
+  <parent link="chest_rod_1"/>
+  <child link="chest_slider_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+  <limit upper="0.342888" lower="-0.31382" effort="100" velocity="100"/>
+</joint>
+
+</robot>
